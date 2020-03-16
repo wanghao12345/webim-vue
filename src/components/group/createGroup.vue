@@ -29,7 +29,7 @@
       <div class="groPub">
         <el-checkbox-group v-model="form.membersList">
           <li v-for="item in firendList" :key="item.uid" class="friendItem">
-            <el-checkbox  :key="item.uid" :label="item.name" >
+            <el-checkbox  :key="item.uid" :label="item.name" :value="item.uid" >
             </el-checkbox>
           </li>
         </el-checkbox-group>
