@@ -29,7 +29,7 @@
       <div class="groPub">
         <el-checkbox-group v-model="form.membersList">
           <li v-for="item in firendList" :key="item.uid" class="friendItem">
-            <el-checkbox  :key="item.uid" :label="item.uid" >
+            <el-checkbox  :key="item.uid" :label="item.name" >
             </el-checkbox>
           </li>
         </el-checkbox-group>
@@ -49,6 +49,7 @@
 <script>
 import "./group.less";
 import { mapActions } from "vuex";
+import axios from 'axios'
 export default{
 	data(){
 		return {
@@ -86,6 +87,22 @@ export default{
 		},
 		postCreateGroup(){
 		  console.log('创建群组')
+
+      // axios.post('https://a1.easemob.com/easemob-demo/chatdemoui/chatgroups', {
+      //   groupname: this.$data.form.groName ,
+      //   desc: this.$data.form.desc,
+      //   members: this.$data.form.membersList,
+      //   public: true,
+      //   approval: false,
+      //   owner: "17384087448",
+      //   invite_need_confirm: false
+      // }).then(res => {
+      //   console.log('创建群组', res);
+      // })
+
+
+
+
 			this.onCreateGroup({
 				groupname: this.$data.form.groName ,
 				desc: this.$data.form.desc,

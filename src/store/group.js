@@ -164,6 +164,7 @@ const Group = {
     //创建群组
     onCreateGroup:async function(context, payload) {
       console.log('创建群组');
+
       let token = JSON.parse(localStorage.getItem("userInfo")).token;
       const {
         groupname,
@@ -183,20 +184,29 @@ const Group = {
            message:"已成功创建"
         })
       }
-      // let options = {
-      //   data: {
-      //     groupname: groupname, // 群组名
-      //     desc: desc, // 群组描述
-      //     members: members, // 用户名组成的数组
-      //     public: pub, // pub等于true时，创建为公开群
-      //     approval: approval, // approval为true，加群需审批，为false时加群无需审批
-      //   },
-      //   success: function(resp) {
-      //     Vue.$store.dispatch('onGetGroupUserList')
-      //   },
-      //   error: function() {}
-      // };
-      // WebIM.conn.createGroupNew(options);
+
+     /* const {
+        groupname,
+        desc,
+        members
+      } = payload;
+      let options = {
+        data: {
+          groupname: groupname, // 群组名
+          desc: desc, // 群组描述
+          members: members, // 用户名组成的数组
+          public: true, // pub等于true时，创建为公开群
+          approval: false, // approval为true，加群需审批，为false时加群无需审批
+        },
+        success: function(resp) {
+          // Vue.$store.dispatch('onGetGroupUserList')
+
+          console.log('增加：', resp);
+
+        },
+        error: function() {}
+      };
+      WebIM.conn.createGroupNew(options);*/
     },
     //将好友加入群组
     onInviteGroup: function(context, payload) {
