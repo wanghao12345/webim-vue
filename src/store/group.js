@@ -163,7 +163,8 @@ const Group = {
     },
     //创建群组
     onCreateGroup:async function(context, payload) {
-     let token = JSON.parse(localStorage.getItem("userInfo")).token;
+      console.log('创建群组');
+      let token = JSON.parse(localStorage.getItem("userInfo")).token;
       const {
         groupname,
         desc,
@@ -172,7 +173,9 @@ const Group = {
       let ids = members.join(",");
      let {data} = await Groups.createGroup({
        token,
-       ids
+       ids,
+       groupname,
+       desc
      });
       if(data.status == 1){
         Vue.$message({
