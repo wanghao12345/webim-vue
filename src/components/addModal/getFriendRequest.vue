@@ -34,7 +34,7 @@
     @cancel="refusedClick(0)"
   >
     <div style="display: flex; justify-content: space-around;margin-bottom: 30px;">
-      <span>{{newFriendList[0].msg}}</span>
+      <span>{{newFriendList.length > 0 ? newFriendList[0].msg : ''}}</span>
     </div>
     <div slot="footer" class="dialog-footer">
       <el-button @click="refusedClick(0)">拒绝</el-button>
